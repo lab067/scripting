@@ -4,6 +4,11 @@
 .DESCRIPTION
     Reads a list of computer names from "Computers.txt", queries each for installed updates, 
     and exports results to a CSV file named "PatchReport_<ComputerName>.csv".
+    
+    *NOTE*
+    Requires remote management features enabled on target computers. Achievable at scale via GPO (Active Directory), Intune (Entra ID/Azure) or RMM System (N-Central, Kaseya VSM et al).
+    Firewall rules enabled: Windows Management Instrumentation (WMI), Remote Administration (RPC), File and Printer Sharing (Echo Request - ICMPv4-In), Windows Remote Management (HTTP-In)
+    Services Running: RpcSs, RpcLocator, WinRM
 #>
 
 # Function to check patch levels on a remote computer and export to CSV
