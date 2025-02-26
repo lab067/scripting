@@ -4,6 +4,11 @@
 .DESCRIPTION
     Queries a remote computer for installed Windows updates using the Get-HotFix cmdlet
     and generates a summary of installed patches, their count, and the latest update.
+    
+    *NOTE*
+    Requires remote management features enabled on target computers. Achievable at scale via GPO (Active Directory), Intune (Entra ID/Azure) or RMM System (N-Central, Kaseya VSM et al).
+    Firewall rules enabled: Windows Management Instrumentation (WMI), Remote Administration (RPC), File and Printer Sharing (Echo Request - ICMPv4-In), Windows Remote Management (HTTP-In)
+    Services Running: RpcSs, RpcLocator, WinRM
 #>
 
 # Function to check patch levels on a remote computer
